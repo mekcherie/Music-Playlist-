@@ -17,36 +17,36 @@ class Playlist:
   # TODO: Create a method called find_song that searches for whether a song exits in the playlist and returns its index. The method has one parameters, title, which is the title of the song to be searched for. If the song is found, return its index.
 
   def find_song(self, title):
-    curr_song = self.__first_song
+    current_song = self.__first_song
     index = 0
     if self.length() is None:
       return -1
     else:
-      while curr_song:
-        if curr_song.get_title() == title:
+      while current_song:
+        if current_song.get_title() == title:
           return index
         else:
           index += 1
-          curr_song = curr_song.get_next_song()
+          current_song = current_song.get_next_song()
       return -1
 
 
   # TODO: Create a method called remove_song that removes a song from the playlist. This method takes one parameter, title, which is the song that should be removed. 
 
   def remove_song(self, title):
-    curr_song = self.__first_song
+    current_song = self.__first_song
 
-    if curr_song.get_title() == title: 
-      self.__first_song = curr_song.get_next_song()
-      return print(f'Deleted {title} from Playlist')
+    if current_song.get_title() == title: 
+      self.__first_song = current_song.get_next_song()
+      return print(f'Removed {title} from Playlist')
 
     else: 
-      while curr_song.get_title() != title:
-        if curr_song.get_next_song().get_title() == title: 
-          curr_song.set_next_song(curr_song.get_next_song())
-          return print(f'Deleted {title} from Playlist')
+      while current_song.get_title() != title:
+        if current_song.get_next_song().get_title() == title: 
+          current_song.set_next_song(current_song.get_next_song().get_next_song())
+          return print(f'Removed {title} from Playlist')
         else: 
-          curr_song = curr_song.get_next_song()
+          current_song = current_song.get_next_song()
 
 
 
@@ -54,11 +54,11 @@ class Playlist:
 
   def length(self):
     index = 0
-    curr_song = self.__first_song
+    current_song = self.__first_song
 
-    while curr_song != None:
+    while current_song != None:
       index += 1
-      curr_song = curr_song.get_next_song()
+      current_song = current_song.get_next_song()
       
     return index
 
@@ -72,13 +72,13 @@ class Playlist:
 
   def print_songs(self):
     index = 1
-    curr_song = self.__first_song
+    current_song = self.__first_song
 
-    if curr_song == None:
-      print(f"No songs foound in Playlist. Please add some")
+    if current_song == None:
+      print(f"song is not found, try adding another")
       return None
 
-    while curr_song:
-      print(f"{index}. {curr_song.get_title()}")
+    while current_song:
+      print(f"{index}. {current_song.get_title()}")
       index += 1
-      curr_song = curr_song.get_next_song()
+      current_song = current_song.get_next_song()

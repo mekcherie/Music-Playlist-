@@ -1,4 +1,5 @@
 from Playlist import Playlist
+from Song import Song
 
 playlist = Playlist()
 
@@ -60,4 +61,6 @@ while True:
   # Message for invalid input
   else:
     print('That is not a valid option. Try again.\n')
+    user_selection = int(input('Enter one of the 5 options:  '))
+
 
