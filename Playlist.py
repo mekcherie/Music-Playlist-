@@ -12,6 +12,7 @@ class Playlist:
 
 
 
+
   # TODO: Create a method called find_song that searches for whether a song exits in the playlist and returns its index. The method has one parameters, title, which is the title of the song to be searched for. If the song is found, return its index.
 
   def find_song(self, title):
@@ -29,7 +30,8 @@ class Playlist:
 
   def length(self):
     pass
-
+  #   def size(self):
+         return len(self.items)
 
   # TODO: Create a method called print_songs that prints a numbered list of the songs in the playlist.
 
@@ -39,6 +41,6 @@ class Playlist:
   # 3. Song Title 3
 
   def print_songs(self):
-    pass
+
 
   
